@@ -6,16 +6,14 @@
 use Mix.Config
 
 # General application configuration
-config :rumbl,
-  ecto_repos: [Rumbl.Repo]
+config :rumbl, ecto_repos: [Rumbl.Repo]
 
 # Configures the endpoint
 config :rumbl, RumblWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "KkQA8lztzm2ixmE4xwGrouo1NQLp52osT5QaIsLjcYjbMoXbm26Fy2nd7nhdH6Gr",
   render_errors: [view: RumblWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Rumbl.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Rumbl.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -26,7 +24,6 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 config :ecto, :json_library, Jason
 
-
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"

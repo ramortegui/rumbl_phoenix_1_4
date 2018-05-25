@@ -29,7 +29,7 @@ defmodule RumblWeb.Auth do
       {:ok, user} -> {:ok, login(conn, user)}
       {:error, :unauthorized} -> {:error, :unauthorized, conn}
       {:error, :not_found} -> {:error, :not_found, conn}
-    end 
+    end
   end
 
   def authenticate_user(conn, _opts) do

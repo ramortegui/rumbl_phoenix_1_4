@@ -20,9 +20,8 @@ defmodule Rumbl.Multimedia do
   """
   def list_videos do
     Video
-    |> Repo.all
+    |> Repo.all()
     |> preload_user()
-
   end
 
   @doc """
